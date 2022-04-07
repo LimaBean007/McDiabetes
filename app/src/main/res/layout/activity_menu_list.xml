@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuListActivity">
+
+    <ScrollView
+
+        android:layout_width="423dp"
+        android:layout_height="596dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_hamburger"
+                android:layout_width="259dp"
+                android:layout_height="259dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15sp"
+                android:src="@drawable/hamburger" />
+
+            <ImageView
+                android:id="@+id/image_bigmac"
+                android:layout_width="259dp"
+                android:layout_height="259dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15sp"
+                android:src="@drawable/bigmac" />
+
+            <ImageView
+                android:id="@+id/image_mcdouble"
+                android:layout_width="259dp"
+                android:layout_height="259dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15sp"
+                android:src="@drawable/mcdouble" />
+            <ImageView
+                android:id="@+id/image_bbqBeef"
+                android:layout_width="259dp"
+                android:layout_height="259dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15sp"
+                android:src="@drawable/bbqbeef" />
+            <ImageView
+                android:id="@+id/image_chickenmcfirst"
+                android:layout_width="259dp"
+                android:layout_height="259dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15sp"
+                android:src="@drawable/chickenmcfirst" />
+            <ImageView
+                android:id="@+id/image_fondue"
+                android:layout_width="259dp"
+                android:layout_height="259dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15sp"
+                android:src="@drawable/fondue" />
+        </LinearLayout>
+        >
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

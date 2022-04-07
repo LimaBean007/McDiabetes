@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">McDiabetes</string>
+    <string name="mcdiabetes">McDiabetes</string>
+    <string name="sign_up">Sign up</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="username">Username</string>
+    <string name="default_web_client_id" />
+</resources>

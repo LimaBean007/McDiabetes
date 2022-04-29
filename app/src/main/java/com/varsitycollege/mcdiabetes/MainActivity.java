@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnSignup;
     EditText edtUsername;
     EditText edtPassword;
-    private FirebaseAuth mAuth;
-    private  String TAG= "Login Feedback";
+    FirebaseAuth Auth;
+    private String TAG = "Login Feedback";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,70 +33,73 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // ...
 // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        Auth = FirebaseAuth.getInstance();
 
         btnLogin = findViewById(R.id.btnLogin);
         btnSignup = findViewById(R.id.btnSignup);
         edtPassword = findViewById(R.id.edtPassword);
         edtUsername = findViewById(R.id.edtUsername);
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username =edtUsername.getText().toString();
-                String Password=edtPassword.getText().toString();
-
-            /*    mAuth.createUserWithEmailAndPassword(username, Password)
-                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful())
-                {
-
-                }else
-                {
-
+                String username = edtUsername.getText().toString();
+                String Password = edtPassword.getText().toString();
+                Auth = FirebaseAuth.getInstance();
+                if (!username.isEmpty() && !Password.isEmpty()) {
+                    Auth.signInWithEmailAndPassword(username, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful())
+                            {
+                                Toast.makeText(MainActivity.this, "Logging in", Toast.LENGTH_SHORT).show();
+                                Intent loggedInUser = new Intent(MainActivity.this, MenuListActivity.class);
+                                startActivity(loggedInUser);
+                            }else {
+                                Toast.makeText(MainActivity.this, "Whoops", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });*/
-                mAuth.createUserWithEmailAndPassword(username,Password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful())
-                                {
-                                    Toast.makeText(MainActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-                                }else
-                                {
-                                    Toast.makeText(MainActivity.this, "OOOOPS", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                // Create the Intent object of this class Context() to Second_activity class
-                Intent intent = new Intent(getApplicationContext(), MenuListActivity.class);
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Please full in the required fields", Toast.LENGTH_SHORT).show();
+                }
 
-                // start the Intent
-                startActivity(intent);
+            }
+        });
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username = edtUsername.getText().toString();
+                String Password = edtPassword.getText().toString();
+                Auth = FirebaseAuth.getInstance();
 
-                Toast.makeText(MainActivity.this, "DONE", Toast.LENGTH_SHORT).show();
+                if (!username.isEmpty() && !Password.isEmpty()) {
+                    Auth.createUserWithEmailAndPassword(username, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(MainActivity.this, "User logged in", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(MainActivity.this, "Whoops", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
 
-    }
 }
 

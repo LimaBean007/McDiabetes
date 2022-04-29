@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "506682464807",
+    "project_id": "mcdiabetes-33e0d",
+    "storage_bucket": "mcdiabetes-33e0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506682464807:android:5f0587f9494f13396dcc02",
+        "android_client_info": {
+          "package_name": "com.varsitycollege.mcdiabetes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506682464807-1mstlpvq02i5goacp0h1jmsv311k6ggp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwgYPQSRT2zdIwEMiq474chrysEjjIbKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506682464807-1mstlpvq02i5goacp0h1jmsv311k6ggp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

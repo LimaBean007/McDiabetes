@@ -5,6 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btnPlaceOrder"
+        android:layout_width="145dp"
+        android:layout_height="77dp"
+        android:text="PLACE ORDER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBurgerPrice"
+        app:layout_constraintVertical_bias="0.929" />
+
     <TextView
         android:id="@+id/txtBurgerPrice"
         android:layout_width="320dp"

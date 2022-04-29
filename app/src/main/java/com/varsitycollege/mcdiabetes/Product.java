@@ -3,7 +3,17 @@ package com.varsitycollege.mcdiabetes;
 public class Product {
     private String productName;
     private String productPrice;
-private boolean hasLettuce;
+    public Product()
+    {
+
+    }
+    public Product(String productName, String productPrice) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+    }
+
+
+
 
     public String getProductPrice() {
         return productPrice;
